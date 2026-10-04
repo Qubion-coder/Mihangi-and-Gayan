@@ -9,6 +9,19 @@ export const Admin: React.FC = () => {
   const [generatedUrl, setGeneratedUrl] = useState('');
   const [copied, setCopied] = useState(false);
 
+  const getDisplayName = (prefix: string, name: string) => {
+    const trimmedName = name.trim();
+    switch (prefix) {
+      case 'Mr.': return `Mr. ${trimmedName}`;
+      case 'Mrs.': return `Mrs. ${trimmedName}`;
+      case 'Miss': return `Miss ${trimmedName}`;
+      case 'Mr. & Mrs.': return `Mr. & Mrs. ${trimmedName}`;
+      case 'Family': return `${trimmedName} and Family`;
+      case 'Dear': return trimmedName;
+      default: return trimmedName;
+    }
+  };
+
   const handleGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     if (!guestName.trim()) {
@@ -16,13 +29,11 @@ export const Admin: React.FC = () => {
       return;
     }
 
-    // Build URL with params
+    const displayName = getDisplayName(guestTitle, guestName);
     const baseUrl = window.location.origin;
-    const params = new URLSearchParams();
-    if (guestTitle) params.append('title', guestTitle);
-    params.append('name', guestName.trim());
-
-    const fullUrl = `${baseUrl}/?${params.toString()}`;
+    
+    // Safely URL encode the display name for the path
+    const fullUrl = `${baseUrl}/${encodeURIComponent(displayName)}`;
     setGeneratedUrl(fullUrl);
     setCopied(false);
     toast.success('Invitation link generated successfully!');
@@ -31,7 +42,7 @@ export const Admin: React.FC = () => {
   const handleCopy = (url: string) => {
     navigator.clipboard.writeText(url).then(() => {
       setCopied(true);
-      toast.success('Link copied to clipboard!');
+      toast.success('Link copied!');
       setTimeout(() => setCopied(false), 3000);
     }).catch(() => {
       toast.error('Failed to copy link. Please select and copy manually.');
@@ -39,9 +50,10 @@ export const Admin: React.FC = () => {
   };
 
   const generateFullMessage = (url: string, title: string, name: string) => {
-    return `Dear ${title ? title + ' ' : ''}${name} ❤️
+    const displayName = getDisplayName(title, name);
+    return `Dear ${displayName} ❤️
 
-With joyful hearts, we warmly invite you and your family to celebrate one of the most special days of our lives as we begin our journey together.
+With joyful hearts, we warmly invite you to celebrate one of the most special days of our lives as we begin our journey together.
 
 Please view our wedding invitation and all the event details through the link below 🌐:
 
@@ -56,7 +68,7 @@ With love,
   const handleCopyMessageActive = () => {
     const msg = generateFullMessage(generatedUrl, guestTitle, guestName);
     navigator.clipboard.writeText(msg).then(() => {
-      toast.success('Full message copied to clipboard!');
+      toast.success('Full message copied!');
     }).catch(() => {
       toast.error('Failed to copy message.');
     });
@@ -120,7 +132,6 @@ With love,
                     onChange={(e) => setGuestTitle(e.target.value)}
                     className="w-full bg-white px-6 py-4 rounded-full border border-stone-200/80 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all font-serif text-lg shadow-inner text-stone-800 cursor-pointer"
                   >
-                    <option value="">No Prefix</option>
                     <option value="Mr.">Mr.</option>
                     <option value="Mrs.">Mrs.</option>
                     <option value="Miss">Miss</option>
@@ -153,7 +164,7 @@ With love,
                 className="w-full bg-stone-800 text-brand-rose py-5 rounded-full font-sans tracking-[0.3em] font-bold text-xs uppercase hover:bg-stone-900 transition-all shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3"
               >
                 <LinkIcon className="w-4 h-4 text-brand-plum" />
-                Generate Invitation Link
+                Generate Link
               </button>
             </form>
           </motion.div>

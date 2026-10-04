@@ -119,6 +119,9 @@ export function InvitationContent({
           <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.4em] font-sans text-stone-400 font-semibold block mb-8">
             November 16, 2026
           </span>
+          <p className="text-stone-500 text-[10px] sm:text-xs mt-8 font-sans tracking-wider">
+            Want a beautiful wedding website like this? Create yours with <a target="_blank" rel="noreferrer" className="text-[#D4AF37] hover:text-brand-plum font-semibold underline transition-colors" href="https://wa.me/94707819074">invitemint</a>
+          </p>
         </footer>
       </DeferredMount>
     </motion.div>
