@@ -53,28 +53,10 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                 </div>
               </div>
 
-              {/* Church Ceremony */}
+              {/* Poruwa Ceremony */}
               <div className="relative group">
                 <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
                   <Clock className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div>
-                  <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
-                    Arrival & Welcome
-                  </h4>
-                  <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
-                    <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 06.30 PM Onwards
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-
-              {/* Wedding Function */}
-              <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
-                  <MapPin className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
                   <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
@@ -82,24 +64,24 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                   </h4>
                   <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 06.37 PM
+                      <span className="font-semibold text-stone-700">Time:</span> 6.30 PM
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Buffet */}
+              {/* Reception */}
               <div className="relative group">
                 <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-lavender/40 shadow-lg flex items-center justify-center group-hover:border-brand-plum group-hover:shadow-[0_4px_15px_rgba(176,137,104,0.3)] transition-all duration-500">
                   <Heart className="w-5 h-5 text-brand-plum group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
                   <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-3 group-hover:text-brand-plum transition-colors duration-500">
-                    Buffet
+                    Reception
                   </h4>
                   <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 08.30 PM
+                      <span className="font-semibold text-stone-700">Time:</span> From 7.00 PM
                     </p>
                   </div>
                 </div>
@@ -116,7 +98,7 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                   </h4>
                   <div className="space-y-1.5 text-stone-500/90 font-serif text-base sm:text-lg">
                     <p>
-                      <span className="font-semibold text-stone-700">Time:</span> 11.56 PM
+                      <span className="font-semibold text-stone-700">Time:</span> 11.50 PM
                     </p>
                   </div>
                 </div>

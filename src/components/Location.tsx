@@ -44,16 +44,8 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
                   <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-rose via-brand-lavender to-brand-plum" />
                   
                   <div className="relative z-10">
-                    <div className="inline-flex items-center gap-4 mb-6">
-                      <span className="text-brand-plum uppercase tracking-[0.5em] text-[10px] sm:text-[11px] font-bold drop-shadow-sm">
-                        {venue.label}
-                      </span>
-                      <div className="w-16 h-[1px] bg-gradient-to-r from-brand-plum/60 to-transparent" />
-                    </div>
-
                     <h2 className="text-5xl sm:text-6xl font-display text-stone-800 mb-6 leading-tight drop-shadow-sm">
-                      Where We <br />
-                      <span className="italic font-light text-brand-plum">Celebrate</span>
+                      The Reception at
                     </h2>
 
                     <motion.div 
