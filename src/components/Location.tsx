@@ -45,7 +45,7 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
                   
                   <div className="relative z-10">
                     <h2 className="text-5xl sm:text-6xl font-display text-stone-800 mb-6 leading-tight drop-shadow-sm">
-                      The Reception at
+                      The Reception is at
                     </h2>
 
                     <motion.div 
