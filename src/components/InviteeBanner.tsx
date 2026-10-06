@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 interface InviteeBannerProps {
   inviteeName: string;
@@ -20,13 +20,7 @@ export const InviteeBanner: React.FC<InviteeBannerProps> = ({ inviteeName, event
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-3 mb-4">
-            <Sparkles className="w-4 h-4 text-brand-plum animate-pulse" />
-            <span className="text-brand-plum uppercase tracking-[0.4em] sm:tracking-[0.5em] text-[10px] sm:text-xs font-bold drop-shadow-sm">
-              Specially Invited Guest
-            </span>
-            <Sparkles className="w-4 h-4 text-brand-plum animate-pulse" />
-          </div>
+
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display text-stone-800 tracking-tight mb-4 drop-shadow-sm">
             {inviteeName}
